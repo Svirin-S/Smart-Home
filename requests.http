@@ -1,0 +1,41 @@
+#Список всех сенсоров
+GET http://localhost:8000/sensor/
+
+###
+
+#Сенсор по id
+GET http://localhost:8000/sensor/4/
+
+###
+#Добавление датчика
+POST http://localhost:8000/sensor/
+Content-Type: application/json
+
+{
+  "name": "Сенсор 11",
+  "description": "Датчик в комнате 2"
+}
+###
+
+# обновление датчика
+PATCH http://localhost:8000/update/10/
+Content-Type: application/json
+
+{
+  "name": "Сенсор 3-1"
+}
+
+###
+#Удаление датчика
+DELETE http://localhost:8000/delete/10/
+
+###
+#Добавление показаний
+POST http://localhost:8000/meas/
+Content-Type: application/json
+
+{
+  "sensor": 4,
+  "temperature": 21.3,
+  "date": "2022-12-21T15:22:34Z"
+}
